@@ -1,24 +1,27 @@
+//lang::CwC
 #pragma once
 
-#include <stdlib.h>
+#include <cstdlib>
 
 /**
- * Object - generic object type
- *
- * @author Zoe Corning, Rucha Khanolkar
- */
- 
+ * A class that represents the top of the object hierarchy.
+ * author: chasebish */
 class Object {
-    public:
-        Object() {}
-        
-        /**
-         * tests if this Object is equal to the given Object by checking pointers
-         */
-        virtual bool equals(Object* other);
+public:
+  /** CONSTRUCTORS & DESTRUCTORS **/
 
-        /**
-         * hashes this Object by returning its pointer value
-         */
-        virtual size_t hash();
+  /* Default Object constructor */
+  Object() {}
+
+  /* Default Object destructor, to be overriden by subclasses */
+  virtual ~Object() {}
+
+
+  /** VIRTUAL METHODS **/
+
+  /* Returns whether two objects are equal, to be overriden by subclasses */
+  virtual bool equals(Object* obj) {}
+
+  /* Returns an object's hash value. Identical objects should have identical hashes */
+  virtual size_t hash() {}
 };
