@@ -3,6 +3,8 @@
 #include "object.h"
 #include <assert.h>
 
+//this is an array of objects 
+//the elements of the array are not owned by the array
 class Array : public Object {
         
         //empty constructor
