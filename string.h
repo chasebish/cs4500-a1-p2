@@ -13,36 +13,36 @@ class String : public Object {
 public:
   /** CONSTRUCTORS & DESTRUCTORS **/
 
-  /* Creates a String copying str */
-  String(char* s) {}
+  /* Creates a String copying s */
+  String(char* s);
 
-  /* Creates a String copying str */
-  String(const char* s) {}
+  /* Creates a String copying s */
+  String(const char* s);
 
-  /* Copies a String copying the value from str */
-  String(String* s) {}
+  /* Copies a String copying the value from s */
+  String(String* s);
 
   /* Clears String from memory */
-  ~String() {}
+  ~String();
 
 
   /** INHERITED METHODS **/
 
   /* Inherited from Object, generates a hash for a String */
-  size_t hash() {}
+  size_t hash();
 
   /* Inherited from Object, checks equality between an String and an Object */
-  bool equals(Object* obj) {}
+  bool equals(Object* obj);
 
 
   /** STRING METHODS **/
   
-  /* compares strings on alphabetical order */
-  int cmp(String* s) {}
+  /* Compares strings based on alphabetical order */
+  int cmp(String* s);
 
   /* Creates a new String by combining two existing Strings */
-  String* concat(String* s) {}
+  String* concat(String* s);
 
   /* Returns the current length of the String */
-  size_t size() {}
+  size_t size();
 };
