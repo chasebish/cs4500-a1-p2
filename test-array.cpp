@@ -23,6 +23,10 @@ void test1() { // push
     t_true(arr->get(2) == o3);
     t_true(arr->index_of(o2) == 1);
     t_true(arr->index_of(o3) == 2);
+    delete arr;
+    delete o1;
+    delete o2;
+    delete o3;
     OK("1");
 }
 
@@ -43,6 +47,12 @@ void test2() { // add
     t_true(arr->get(2)->equals(o1));
     t_true(arr->get(3)->equals(o5));
     t_true(arr->get(4)->equals(o3));
+    delete arr;
+    delete o1;
+    delete o2;
+    delete o3;
+    delete o4;
+    delete o5;
     OK("2");
 }
 
@@ -67,6 +77,14 @@ void test3() {
     t_true(arr2->get(2)->equals(o3));
     t_true(arr2->get(3)->equals(o4));
     t_true(arr2->get(4)->equals(o5));
+    
+    delete arr;
+    delete arr2;
+    delete o1;
+    delete o2;
+    delete o3;
+    delete o4;
+    delete o5;
     
     OK("3");
 }
@@ -93,6 +111,13 @@ void test4() {
     arr->clear();
     t_true(arr->size() == 0);
     
+    delete arr;
+    delete o1;
+    delete o2;
+    delete o3;
+    delete o4;
+    delete o5;
+    
     OK("4");
 }
 
@@ -118,6 +143,12 @@ void test5() {
 
     t_false(arr1->equals(arr2));
     t_false(arr2->equals(arr1));
+    
+    delete arr1;
+    delete arr2;
+    delete o1;
+    delete o2;
+    delete o3;
 
     OK("5");
 }
@@ -138,7 +169,14 @@ void test6() {
     t_true(arr->set(0, o1)->equals(o3));
     t_true(arr->set(3, o5)->equals(o4));
     t_true(arr->get(3)->equals(o5));
-    t_true(arr->size() == 5); 
+    t_true(arr->size() == 5);
+    
+    delete arr;
+    delete o1;
+    delete o2;
+    delete o3;
+    delete o4;
+    delete o5;
 
     OK("6");
 }
