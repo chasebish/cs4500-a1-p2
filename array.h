@@ -5,16 +5,17 @@
 
 class Array : public Object {
         
-        //empty constructors
-        Array(size_t array_size) {}
+        //empty constructor
+        Array() : Object() {}
+        
+        // creates an array of the given size
+        Array(size_t array_size) : Object() {}
 
-        Array(const size_t array_size) {}
-
-        Array(Array* copy_array) {}
+        // copies the elements of the given array into this array
+        Array(Array* copy_array) : Object() {}
 
         //deconstructor
-        ~Array() {
-        }
+        ~Array() {}
 
         // returns the number of elements in this array
         virtual size_t size();
