@@ -15,10 +15,10 @@ class Object {
         /**
          * tests if this Object is equal to the given Object by checking pointers
          */
-        virtual bool equals(Object* other);
+        virtual bool equals(Object* other) {}
 
         /**
          * hashes this Object by returning its pointer value
          */
-        virtual size_t hash();
+        virtual size_t hash() {}
 };
