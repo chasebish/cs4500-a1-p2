@@ -27,9 +27,21 @@ clear() //removes all elements from the array <br>
 equals(Object* o) //checks if this array is equal to the given object <br>
 hash() //adds together the hashes of all the objects <br>
 
+BoolArray, IntArray, FloatAray, StringArray
+-----------
+In order to fit the spec of the assignment, we have added subclasses that inherit the array class. These arrays support boolean, integer, float and string values. Each of these methods takes in arguments based on its respective class. 
+
+index_of(Object* o) //returns index of given object in this array <br>
+push(Object* o) //pushes given object onto end of this array <br>
+add(size_t idx, Object* o) //adds given element to the array at the given index <br>
+add_all(size_t idx, Array* a) //adds all given elements to the array at the given index <br>
+get(size_t idx) //returns element of the array at the given index <br>
+set(size_t idx, Object* o) //sets the given index to the given element <br>
+remove(size_t idx) //removes the object at the given index <br>
+
 test-array class
 -----------
-Contains 6 tests that test all the functions above
+Contains tests that test all the functions above and for each respective type. 
 
 running
 -----------
