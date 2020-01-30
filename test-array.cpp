@@ -14,7 +14,7 @@ void t_true(bool p) { if (!p) FAIL(); }
 void t_false(bool p) { if (p) FAIL(); }
 
 bool float_equals(float f1, float f2) {
-	return (f1 - f2) > 0.01 || (f1 - f2) < -0.01;
+	return (f1 - f2) < 0.01 || (f1 - f2) > -0.01;
 }
 	
 void test1a() { // push
