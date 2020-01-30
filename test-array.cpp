@@ -13,6 +13,10 @@ void OK(const char* m) { printf("%s\n", m); }
 void t_true(bool p) { if (!p) FAIL(); }
 void t_false(bool p) { if (p) FAIL(); }
 
+bool float_equals(float f1, float f2) {
+	return (f1 - f2) > 0.01 || (f1 - f2) < -0.01;
+}
+	
 void test1a() { // push
     Array* arr = new Array();
     t_true(arr->size() == 0);
@@ -71,12 +75,12 @@ void test1f() { // push
     FloatArray* arr = new FloatArray();
     t_true(arr->size() == 0);
     arr->push(1.2);
-    t_true(arr->float_get(0) == 1.2);
+    t_true(float_equals(arr->float_get(0), 1.2));
     t_true(arr->size() == 1);
     arr->push(2.3);
     arr->push(-12.5);
-    t_true(arr->float_get(1) == 2.3);
-    t_true(arr->float_get(2) == -12.5);
+    t_true(float_equals(arr->float_get(1), 2.3));
+    t_true(float_equals(arr->float_get(2), -12.5));
     t_true(arr->index_of(2.3) == 1);
     t_true(arr->index_of(-12.5) == 2);
     delete arr;
@@ -185,11 +189,11 @@ void test2f() { // add
     arr->add(2, f3); // 4
     arr->add(1, f4); // 1
     arr->add(3, f5); // 3
-    t_true(arr->float_get(0) == f2);
-    t_true(arr->float_get(1) == f4);
-    t_true(arr->float_get(2) == f1);
-    t_true(arr->float_get(3) == f5);
-    t_true(arr->float_get(4) == f3);
+    t_true(float_equals(arr->float_get(0), f2));
+    t_true(float_equals(arr->float_get(1), f4));
+    t_true(float_equals(arr->float_get(2), f1));
+    t_true(float_equals(arr->float_get(3), f5));
+    t_true(float_equals(arr->float_get(4), f3));
     delete arr;
     OK("2-float");
 }
@@ -323,11 +327,11 @@ void test3f() {
     arr2->push(f5);
     arr2->add_all(0, arr);
 
-    t_true(arr2->float_get(0) == (f1));
-    t_true(arr2->float_get(1) == (f2));
-    t_true(arr2->float_get(2) == (f3));
-    t_true(arr2->float_get(3) == (f4));
-    t_true(arr2->float_get(4) == (f5));
+    t_true(float_equals(arr2->float_get(0), f1));
+    t_true(float_equals(arr2->float_get(1), f2));
+    t_true(float_equals(arr2->float_get(2), f3));
+    t_true(float_equals(arr2->float_get(3), f4));
+    t_true(float_equals(arr2->float_get(4), f5));
     
     delete arr;
     delete arr2;
@@ -454,10 +458,10 @@ void test4f() { // remove and clear
     arr->push(f3);
     arr->push(f4);
     arr->push(f5);
-    t_true(arr->float_remove(3) == f4);
+    t_true(float_equals(arr->float_remove(3), f4));
     t_true(arr->size() == 4);
-    t_true(arr->float_remove(3) == f5);
-    t_true(arr->float_remove(0) == f1);
+    t_true(float_equals(arr->float_remove(3), f5));
+    t_true(float_equals(arr->float_remove(0), f1));
     arr->clear();
     t_true(arr->size() == 0);
     
@@ -732,10 +736,10 @@ void test6f() {
     arr->push(f3);
     arr->push(f4);
     arr->push(f5);
-    t_true(arr->set(0, f3) == f1);
-    t_true(arr->set(0, f1) == f3);
-    t_true(arr->set(3, f5) == f4);
-    t_true(arr->float_get(3) == f5);
+    t_true(float_equals(arr->set(0, f3), f1));
+    t_true(float_equals(arr->set(0, f1), f3));
+    t_true(float_equals(arr->set(3, f5), f4));
+    t_true(float_equals(arr->float_get(3), f5));
     t_true(arr->size() == 5);
     
     delete arr;
