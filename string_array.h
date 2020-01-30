@@ -2,8 +2,8 @@
 
 #include "object.h"
 #include "string.h"
-#include <assert.h>
 #include "array.h"
+#include <cassert>
 
 // this is an array of String* values 
 // the strings in this array are not owned

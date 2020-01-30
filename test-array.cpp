@@ -1,5 +1,5 @@
-#include <assert.h>
-#include <stdio.h>
+#include <cassert>
+#include <cstdlib>
 #include "array.h"
 #include "object.h"
 #include "string.h"
@@ -222,39 +222,6 @@ void test2s() { // add
     delete s4;
     delete s5;
     OK("2-string");
-}
-
-void test3a() {
-    // addall
-    Array* arr = new Array();
-    Object* o1 = new Object();
-    Object* o2 = new Object();
-    Object* o3 = new Object();
-    Object* o4 = new Object();
-    Object* o5 = new Object();
-    arr->push(o1);
-    arr->push(o2);
-    arr->push(o3);
-    Array* arr2 = new Array();
-    arr2->push(o4);
-    arr2->push(o5);
-    arr2->add_all(0, arr);
-
-    t_true(arr2->get(0)->equals(o1));
-    t_true(arr2->get(1)->equals(o2));
-    t_true(arr2->get(2)->equals(o3));
-    t_true(arr2->get(3)->equals(o4));
-    t_true(arr2->get(4)->equals(o5));
-    
-    delete arr;
-    delete arr2;
-    delete o1;
-    delete o2;
-    delete o3;
-    delete o4;
-    delete o5;
-    
-    OK("3-array");
 }
 
 void test3b() {
@@ -785,7 +752,6 @@ int main(int argc, char** argv) {
     test2i();
     test2f();
     test2s();
-    test3a();
     test3b();
     test3i();
     test3f();

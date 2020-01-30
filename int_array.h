@@ -2,7 +2,7 @@
 
 #include "array.h"
 #include "object.h"
-#include <assert.h>
+#include <cassert>
 
 // this is an array of integer values 
 class IntArray : public Array {
