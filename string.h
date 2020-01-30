@@ -38,7 +38,7 @@ class String : public Object {
         // concats this string and the given string
         String* concat(String* s) {}
 
-         // returns true if this string is equal to the given object
+         // checks equality between given object and string
         bool equals(Object* o) {}
 
         // hashes this string
