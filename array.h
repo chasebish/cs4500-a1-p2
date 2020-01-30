@@ -63,6 +63,6 @@ class Array : public Object {
         //checks if this array is equal to the given object
         virtual bool equals(Object* o) {}
 
-        //adds together the hashes of all of the objects
+        //hash function
         virtual size_t hash() {}
 };
